@@ -1,0 +1,64 @@
+
+
+<div class="row p-5">
+    <div class="col container p-5" id="drop-area" style="box-shadow: 10px 10px 10px 5px rgb(109,127,204); border: 2px dashed #ccc;  border-radius: 12px;"> 
+                
+                    
+        <form class="my-form" enctype="multipart/form-data" action="" onsubmit="return false">
+            <div id="typeFileLoad" class="m-2">    </div>
+            <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">url</span>
+            </div>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </form>
+    <div class="row m-2">
+                    
+        <div class="col">
+            <label for="sheet-number"> Номер страницы для обработки</label>
+        </div>
+        <div class="col">
+            <input type="number" id="sheet-number" class="form-control" placeholder="Sheets"/> 
+        </div>
+    </div> 
+        <div class="row m-2">
+                    
+        <div class="col">
+            <label for="sheet-rows"> Ввести столбцы для обработки</label>
+        </div>
+        <div class="col">
+            <input type="text" id="sheet-rows" class="form-control" placeholder="B:D">
+        </div>
+    </div> 
+    <div class="progress">
+    <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+    </div>
+                    
+
+                    
+    </div>
+    <div class="col-2" style="margin-left: 10px; margin-top: 15%">
+        <div class="row m-1 mb-4"><i id="load-to-server-file" class="fas fa-check-square" data-toggle="tooltip" data-placement="left" title="Отправить" style="color:rgb(109,127,204); cursor:  pointer; width: 35px; height: 35px;" onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px';"></i>
+        </div>
+        <div class="row m-1"><i id="checkTable" class="fas fa-sync-alt" data-toggle="tooltip" data-placement="left" title="Обработать" style="color:rgb(109,127,204); cursor:  pointer; width: 35px; height: 35px;" onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px';"></i>  <i class="fas fa-trash-alt m-5" id="delete-users-statistical" data-toggle="tooltip" data-placement="left" title="Удалить" style="cursor: pointer; width: 35px; height: 35px;" onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px'; "></i>
+
+        </div>
+    </div>
+</div>
+
+h3 Обновить статистику по боям и т.д 
+div(class="form-row p-5" style="display: flex; justify-content: center;")
+    button(class="btn blue-gradient" id="reload-statistic-batl-user") Обновить статистику
+div(style="display: flex;justify-content: center;align-items: center;")
+    div(class="loadersers") Обновление...
+        
+h3 Обновить баллы после боя
+div(class="form-row p-5" style="display: flex; justify-content: center;")
+    div(class="md-form" style="display: flex; flex-direction: column;")
+        input( class="form-control form-control-lg" type="text" id="balls-statistic-batl")
+        label(for="balls-statistic-batl") Вставить ссылку на бой
+        button(class="btn blue-gradient" id="balls-statistic-batl-click") Обновить баллы
+
+script
+ include script/stat.js

@@ -1,0 +1,59 @@
+
+div(class="row p-5" id="wrapper-store")
+    div(class="col p-3" style="box-shadow: 10px 10px 10px 5px rgb(109,127,204)")
+        form(id="FormDataProduct")
+            div(class="form-row hoverable" ) 
+                div(class="form-group col-md-6")
+                    label(for="priceProduct")  
+                        h3 Цена 
+                    input(type="text" name="priceProduct" class="form-control" id="priceProduct")
+                div(class="form-group col-md-6")
+                    label(for="section") 
+                        h3 Раздел 
+                    select(id="section-section" class="form-control" name="section")
+                div(class="form-group col-md-6")
+                    label(for="nameProduct")  
+                        h3 Наименование
+                    input(type="text" name="nameProduct" class="form-control" id="nameProduct")
+                div(class="form-group col-md-6")
+                    label(for="parametrProduct")  
+                        h3 Размер/Параметры в []
+                    input(type="text" name="parametrProduct" class="form-control" id="parametrProduct")
+
+            div(class="form-row hoverable")
+                div(class="form-group col-md-12")
+                    label(for="inputDiscriptionProduct") Описание
+                    textarea(class="form-control" id="inputDiscriptionProduct" name="discription")
+            div(class="form-row hoverable")
+                div(class="form-group col-md-6")
+                    label(for="file-upload" class="label-product-file")
+                        i(class="fas fa-plus")
+                        h3 Фото
+                    input(type="file" id="file-upload" style="display: none;" multipart)
+                div(class="form-group col-md-6" id="appendImage")
+    div(class="col-2" style="margin-left: 10px; margin-top: 5%")
+        //- div(class="row m-1 mb-4")
+        //-     i(class="fas fa-trash-alt" data-toggle="tooltip" data-placement="left" title="Удалить" style="cursor: pointer; width: 35px; height: 35px;" onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px'; ")
+        div(class="row m-1 mb-4") 
+            i(class="fas fa-check-square" id="save-product" data-toggle="tooltip" data-placement="left" title="Сохранить" style="color:rgb(109,127,204); cursor:  pointer; width: 35px; height: 35px;" onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px';")
+        //- div(class="row m-1 mb-4")
+        //-     i(class="fas fa-sync-alt" data-toggle="tooltip" data-placement="left" title="Повторить" style="color:dimgrey; cursor: pointer; width: 35px; height: 35px;"  onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px';")
+div(class="form-row p-5 animated fadeInLeftBig")
+    div(class="form-group col-md-6")
+        ul(class="list-group" id="add-section")
+            li(class="list-group-item add-item-item hoverable" id="add-section-item") 
+                span Добавить новый раздел
+                i(class="fas fa-plus") 
+            li(class="list-group-item") 
+                input(type="text" id="add-section-input" class="form-control" placeholder="Название раздела")
+    div(class="form-group col-md-6 list-item-item" id="list-section-store")
+        ul(class="list-group" id="list-section")
+
+
+
+
+
+
+
+script
+    include ./script/store.js

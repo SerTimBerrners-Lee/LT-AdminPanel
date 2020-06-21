@@ -1,0 +1,42 @@
+doctype html 
+html 
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        script(src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js")
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css")
+    style
+         include ./style/qrender.css
+
+body
+    div(class="container body-container"  style="background-color: #efefef; box-shadow: 10px 10px 10px 5px rgb(109,127,204)")
+        div(class="text")
+            h4 ID пользователя
+            p #{id_user} 
+        div(class="text")
+            h4 Login
+            p #{login_user}
+        div(class="text")
+            h4 Время платежа
+            p #{date} / #{time}
+        div(class="text")
+            h4 Общая сумма
+            p #{price}
+        div(class="div-slider")
+            div(class="slider")
+                each val in JSON.parse(purchase)
+                    div
+                        div(class="img-slider-container")
+                            img(class="img-slider" src=`${val.image}`)
+                        div
+                            p=val.name       
+                            p=`Параметр: ${val.parametr}`
+                            p=`Цена: ${val.price}`   
+
+
+script
+    include ./script/qrender.js

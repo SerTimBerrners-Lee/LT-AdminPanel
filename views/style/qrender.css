@@ -1,0 +1,30 @@
+.text {
+    text-align: center;
+    padding: 10px;
+}
+
+.text>p {
+    font-size: 20px;
+}
+
+.text>h4{
+    text-decoration: underline;
+}
+.img-slider{
+    height: 150px;
+    width: 150px;
+}
+.div-slider {
+    width: 200px;
+}
+.body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.img-slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

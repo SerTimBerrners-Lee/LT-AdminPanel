@@ -1,0 +1,84 @@
+
+
+h3 Добавить или Удалить оружие
+div(class="form-row p-5")
+    div(class="form-group col-md-6")
+        ul(class="list-group" id="add-weapon")
+            li(class="list-group-item add-item-item" id="add-weapon-item") 
+                span Добавить новый раздел
+                i(class="fas fa-plus") 
+            li(class="list-group-item") 
+                input(type="text" id="add-weapon-name-input" class="form-control" placeholder="Название Оружия")
+                input(type="number" id="add-weapon-col-input" class="form-control" placeholder="Количество Оружия")
+    div(class="form-group col-md-6 list-item-item" id="list-weapon")
+        ul(class="list-group" id="list-weapon-ul")
+h3 Добавить или Удалить локацию
+div(class="form-row p-5")
+    div(class="form-group col-md-6")
+        ul(class="list-group" id="add-location")
+            li(class="list-group-item add-item-item" id="add-location-item") 
+                span Добавить новый раздел
+                i(class="fas fa-plus") 
+            li(class="list-group-item") 
+                input(type="text" id="add-location-name-input" class="form-control" placeholder="Название Локации")
+                label(for="add-location-parametr-input") Широта и Долгота
+                input(type="text" id="add-location-parametr-input" class="form-control" placeholder="51.367600, 42.073935")
+    div(class="form-group col-md-6 list-item-item" id="list-location")
+        ul(class="list-group" id="list-location-ul")
+h3 Обнулить статистику в магазине 
+div(class="form-row p-5" style="display: flex; justify-content: center;")
+    button(class="btn blue-gradient" id="delete-statistic-shop") Обнулить 
+h3 Изменить раздел "Акции"
+div(class="row p-5" style="margin-top: 30px;")
+    div(class="col-6")
+        div(class="md-form amber-textarea active-amber-textarea")
+            <i class="fas fa-pencil-alt prefix"></i>
+            textarea(id="form22" class="md-textarea form-control" rows="3")
+            label(for="form22") Текст
+    div(class="col-6")
+        div(class="md-form")
+            input(type="text" id="inputLGEx" class="form-control form-control-lg")
+
+        button(class="btn blue-gradient" id="scale-rename-upload") Изменить 
+
+<h3> Изменить раздел Турнир</h3> 
+
+div(class="md-form")
+    input(type="text" id="inputTurnirTitle" placeholder="Заголовок" class="form-control form-control-lg")
+
+<div class="md-form amber-textarea active-amber-textarea">
+    <i class="fas fa-pencil-alt prefix"></i>
+    <textarea id="formTexterraTurnir" class="md-textarea form-control" rows="3"> </textarea>
+    <label for="formTexterraTurnir"> Текст </label>
+</div>
+<div id="appendFileTurnir"> </div>
+<label class="btn blue-gradient" for="fileTurnir"> Выбрать фото </label>
+<input style="display: none" type="file" id="fileTurnir" />
+
+<button class="btn blue-gradient" id="add-section-articles"> Сохранить изменения </button>
+
+
+h3(class="m-5") Изменить раздел Поездки
+
+div(class="md-form")
+    input(type="text" id="inputPoezdkiTitle" placeholder="Заголовок" class="form-control form-control-lg")
+
+<div class="md-form amber-textarea active-amber-textarea">
+    <i class="fas fa-pencil-alt prefix"></i>
+    <textarea id="formTexterraPoezdki" class="md-textarea form-control" rows="3"> </textarea>
+    <label for="formTexterraPoezdki"> Текст </label>
+</div>
+<div id="appendFilePoezdki"> </div>
+<label class="btn blue-gradient" for="filePoezdki"> Выбрать фото </label>
+<input style="display: none" type="file" id="filePoezdki" />
+
+<button class="btn blue-gradient" id="add-section-articles-poezdki"> Сохранить изменения </button>
+
+
+
+
+ 
+
+
+script  
+    include ./script/settings.js

@@ -1,0 +1,14 @@
+
+
+div(class="container mt-5")
+    ul(class="nav nav-pills mb-3" id="pills-tab" role="tablist")
+        li(class="nav-item")
+            a(class="nav-link active" id="pills-active-tab" data-toggle="pill" href="#pills-active-product" role="tab" aria-controls="pills-active-product" aria-selected="true") Покупки
+        li(class="nav-item")
+            a(class="nav-link" id="pills-confirmation-tab" data-toggle="pill" href="#pills-confirmation" role="tab" aria-controls="pills-confirmation" aria-selected="false") Потверждение
+    div(class="tab-content" id="pills-tabContent") 
+        div(class="tab-pane fade show active" id="pills-active-product" role="tabpanel" aria-labelledby="pills-active-tab") 
+           
+        div(class="tab-pane fade" id="pills-confirmation" role="tabpanel" aria-labelledby="pills-confirmation-tab") 
+script
+    include ./script/message.js

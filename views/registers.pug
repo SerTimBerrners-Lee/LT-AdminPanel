@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        script(src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+        script(defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js")
+        script(src="https://unpkg.com/axios/dist/axios.min.js")
+        style
+            include ./style/style-register.css
+        script(src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
+        
+
+
+
+    body
+        div(class="wrapper")
+            div(class="left-content")
+                div(id="alert-start-top" style="")
+                img(src="https://lasertroid.ru/wp-content/uploads/2018/03/Kalashy_Gerb_LaserTroid_Flag15600px.png", alt="")
+            div(class="right-content")
+                div( id="process-data" class="spinner-border text-primary" role="status" style="position: absolute; top: 5px;")
+                    span(class="sr-only") Loading...
+                div(class="content-one")
+                    div(class="title")
+                        h2 Вход
+                    div(class="sign-in")
+                        input(type="text" id="sign-in-login" class="form-control form-control-lg" placeholder="Логин")
+                        input(type="password" id="sign-in-password" class="form-control form-control-lg" placeholder="Пароль")
+                        button(id="btn-sign" class="btn") Войти
+                        button(class="btn-show-hide" class="btn") Зарегестрироваться 
+                div(class="content-two")
+                    div(class="title")
+                        h2 Регистрация
+                    div(class="sign-in")
+                        input(type="text" id="reg-in-login" class="form-control form-control-lg" placeholder="Логин")
+                        input(type="password" id="reg-in-password" class="form-control form-control-lg" placeholder="Пароль")
+                        input(type="text" id="reg-in-email" class="form-control form-control-lg" placeholder="E-mail")
+                        button(id="btn-reg" class="btn") Зарегестрироваться 
+                        button(class="btn-show-hide" class="btn") Войти
+                //div(class="register")
+
+
+
+script
+    include ./script/register.js
+
+script
+    include ./script/alert.js

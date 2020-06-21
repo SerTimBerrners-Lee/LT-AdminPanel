@@ -1,0 +1,65 @@
+.wrapper {
+    display: flex;
+}
+
+body {
+    user-select: none;
+}
+
+.left-content {
+    flex: 2;
+    background-color: #141414;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.right-content {
+    flex: 1;
+}
+.content-one, .content-two {
+    display: none ;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 60px rgba(199, 16, 16, 0.5);
+    justify-content: center;
+    height: 100vh;  
+    background-color: #f0f0f0;
+    flex-direction: column;
+}
+.title{
+    background-color: rgb(38, 34, 34);
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat;
+}
+.sign-in {
+    display: flex;
+    flex-direction: column;
+    background-color: #141414;
+    width: 100%;
+    padding: 15%;
+    color: #f0f0f0;
+    align-items: center;
+    flex: 2;
+}
+input, button {
+    margin: 10px;
+    padding: 10px;
+    width: 90%;
+}
+button {
+    background-color: rgb(38, 34, 34) !important;
+    color: wheat !important;
+}
+
+
+img {
+    width: 65%;
+}

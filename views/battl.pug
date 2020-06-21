@@ -1,0 +1,54 @@
+
+div(class="row p-5 ")
+    div(class="col p-3" style="box-shadow: 10px 10px 10px 5px rgb(109,127,204)")
+        form(onsubmit="return false")
+            div(class="form-row ") 
+                div(class="form-group col-md-6")
+                    label(for="inputNameLocation")  Имя локации 
+                    input(type="text" name="nameLocation" class="form-control" id="inputNameLocation")
+                div(class="form-group col-md-3")
+                    label(for="dataBattle") Дата
+                    input(id="dataBattle"  class="form-control")
+                div(class="form-group col-md-3")
+                    label(for="inputPassword4") Время
+                    input(name="time" class="form-control" id="timeBattle")
+            div(class="form-row")
+                div(class="form-group col-md-6")
+                    label(for="selectAddress") Адрес локации
+                    select(id="selectAddress" class="form-control" name="selectAddress")
+                div(class="form-group col-md-6")
+                    label(for="inputPhone") Телефон для связи
+                    input(type="text" name="phone" class="form-control" id="inputPhone" placeholder="+79507592524")
+            div(class="form-row")
+                div(class="form-group col-md-6 labels-for-select") 
+                    h4 Выбрать оружие : 
+                div(class="form-group col-md-6 selector-block") 
+                    select(id="example-getting-started" multiple="multiple")
+            div(class="form-row")
+                div(class="form-group col-md-6")
+                    label(for="inputDiscription") Описание
+                    textarea(class="form-control" id="inputDiscription" name="discription")
+                div(class="form-group col-md-6 class-col-places")
+                    label Количество участников
+                    div(class="def-number-input number-input safari_only")
+                        button(onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus")
+                        input(class="quantity" min="0" id="colPlaces" name="quantity" value="5" type="number")
+                        button(onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus")
+                    
+    div(class="col-2" style="margin-left: 10px; margin-top: 5%")
+        div(class="row m-1 mb-4") 
+            i(class="fas fa-check-square" id="save-battl" data-toggle="tooltip" data-placement="left" title="Сохранить" style="color:rgb(109,127,204); cursor:  pointer; width: 35px; height: 35px;" onmouseover="this.style.width='50px';" onmouseout="this.style.width='35px';")
+div(class="container")
+    ul(class="nav nav-pills mb-3" id="pills-tab" role="tablist")
+        li(class="nav-item")
+            a(class="nav-link active" id="pills-active-tab" data-toggle="pill" href="#pills-active" role="tab" aria-controls="pills-active" aria-selected="true") Активные
+        li(class="nav-item")
+            a(class="nav-link" id="pills-completed-tab" data-toggle="pill" href="#pills-completed" role="tab" aria-controls="pills-completed" aria-selected="false") Завершенные
+        li(class="delete-all-complite-battl ml-5" style="display: none")
+            p(class="btn btn-outline-dark") Удалить все
+    div(class="tab-content" id="pills-tabContent") 
+        div(class="tab-pane fade show active" id="pills-active" role="tabpanel" aria-labelledby="pills-active-tab") 
+        div(class="tab-pane fade" id="pills-completed" role="tabpanel" aria-labelledby="pills-completed-tab") 
+
+script 
+    include script/battl.js
