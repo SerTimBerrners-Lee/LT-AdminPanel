@@ -1,6 +1,4 @@
 
-
-
 module.exports = (app, db) => {
     app.get('/api/get-statistic-section', (req, res) => {
         db.query('SELECT name, popular FROM store_section_it_mobile', (err, result) => {
@@ -56,6 +54,11 @@ module.exports = (app, db) => {
       })
     })
     
+  })
+
+  // Загружаем аватарку пользователя
+  app.post('/api/load/avatar/user', (req, res) => {
+    res.send(req);
   })
 }
 
