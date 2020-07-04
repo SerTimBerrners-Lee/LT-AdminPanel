@@ -61,9 +61,62 @@ module.exports = (app, db, fs) => {
 
   // Загружаем аватарку пользователя
   app.post('/api/load/avatar/user', (req, res) => {
-    console.log(req)
-    res.send('hello');
-    
+
+    if(!req.files) {
+      res.send('req.files not found');
+      return 0; 
+    } 
+    let filest = Object.values(req.files)[0];
+    let name = filest.name.split('_')[0];
+
+    fs.stat('./file/image/avatar', err => {
+
+      if(err && err.code && err.code === 'ENOENT') {
+        fs.mkdirSync('./file/image/avatar');
+      } else {
+
+        fs.readdir('./file/image/avatar', (error,  items) => {
+          if(error) {
+            res.send('photo items not found ');
+            return 0;
+          }
+        
+          if(items.length == 0) {
+            saveAve(filest, name);
+            return 0;
+          }
+          items.forEach((el, index, arr) => {
+            if(el.split('_')[0] == name){
+              fs.unlink(`./file/image/avatar/${el}`, (erri) => {
+                if(erri) {
+                  res.send('no delete photo');
+                  return 0;
+                }
+              });
+            };
+            if(index == arr.length - 1) {
+              saveAve(filest, name);
+            }
+          })
+        })
+      }
+    })
+    // Ищем аватарки с этим ID если есть удаляем
+    const saveAve = (file, id) => {
+      console.log(id)
+      file.mv(`./file/image/avatar/${file.name}`, er => {
+        if(er) {
+          res.send(er);
+          return 0;
+        }
+
+        // Делаем запрос в базу данных 
+        db.query('UPDATE wp_users SET avatar_uri=? WHERE ID=?', [`image/avatar/${file.name}`, id],  (_, result) => {
+          if(_) throw _;
+          res.send('true');
+        })
+      });
+    }
   })
 }
 
