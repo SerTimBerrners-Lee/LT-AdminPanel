@@ -26,7 +26,7 @@ module.exports = (app, db, fs) => {
     })
 
   app.get('/api/get-statistic-raiting/user-raiting', (req, res) => {
-    db.query('SELECT ID, user_login, glasses FROM wp_users ', (err, result) => {
+    db.query('SELECT ID, user_login, glasses, avatar_uri FROM wp_users ', (err, result) => {
       if(err) throw err;
       let ARRAY_SORT = [];
       let format = new Promise((resolve) => {
