@@ -8,7 +8,7 @@ const getMessage = require('./getMessage');
 
 module.exports = (app, db, fs) => {
     getUsers(app, db, fs)
-    getStatic(app, db)
+    getStatic(app, db, fs)
     getBattle(app, db)
     getPush(app, db)
     getStore(app, db, fs)

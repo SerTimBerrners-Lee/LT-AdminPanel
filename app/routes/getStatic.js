@@ -1,5 +1,8 @@
+const fileUpload = require('express-fileupload');
 
-module.exports = (app, db) => {
+module.exports = (app, db, fs) => {
+
+  app.use(fileUpload());
     app.get('/api/get-statistic-section', (req, res) => {
         db.query('SELECT name, popular FROM store_section_it_mobile', (err, result) => {
             if(err) throw error;
@@ -58,7 +61,9 @@ module.exports = (app, db) => {
 
   // Загружаем аватарку пользователя
   app.post('/api/load/avatar/user', (req, res) => {
-    res.send(req);
+    console.log(req)
+    res.send('hello');
+    
   })
 }
 

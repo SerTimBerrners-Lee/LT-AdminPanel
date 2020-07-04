@@ -16,10 +16,8 @@ const fileUpload = require('express-fileupload');
      app.post('/add-section-store', (req, res, next) => {
          let name = req.body.name
          let popular = 1;
-         console.log('add-section')
          db.query('INSERT INTO store_section_it_mobile (name, popular) VALUES (?, ?)', [name, popular], (err, result) => {
             if(err) throw err
-
             res.json( { name: name, data: result} );
          })
      })
